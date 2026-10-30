@@ -521,7 +521,7 @@ function App() {
               I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">PRADHAP M</span>, a Graphic Designer and Video Editor with 1.7 years of dedicated experience creating premium, high-retention visual content.
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">
-              I specialize in branding, social media creatives, commercial video editing, motion graphics, and marketing collaterals. With comprehensive hands-on expertise in Adobe Creative Suite (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom) combined with certified AI-powered design workflows (Midjourney, Gemini, ChatGPT), I build compelling visual stories that captivate audiences.
+              I specialize in branding, social media creatives, commercial video editing, motion graphics, and marketing collaterals. With comprehensive hands-on expertise in Adobe Creative Suite (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom) and CapCut, combined with certified AI-powered design workflows (Midjourney, Gemini, ChatGPT), I build compelling visual stories that captivate audiences.
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-12 max-w-3xl text-luxury-taupe">
               My focus is delivering innovative design solutions, polished video post-production, and dynamic marketing assets in collaborative creative environments.
@@ -551,6 +551,11 @@ function App() {
                 alt="After Effects"
                 className="w-14 h-14 md:w-16 md:h-16 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-luxury-bg/10 rounded-xl p-1"
                 src="./assets/adobe_after_effects_macos_bigsur_icon_190464.png"
+              />
+              <img
+                alt="CapCut"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-luxury-bg/10 rounded-xl p-1"
+                src="./assets/capcut.svg"
               />
               <img
                 alt="Lightroom"
@@ -633,6 +638,7 @@ function App() {
                   {[
                     "Adobe Premiere Pro",
                     "Adobe After Effects",
+                    "CapCut Video Editing",
                     "Video Editing",
                     "Motion Graphics",
                     "Kinetic Typography",
