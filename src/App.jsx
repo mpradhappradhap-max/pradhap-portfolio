@@ -193,7 +193,7 @@ function App() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 800);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -474,12 +474,12 @@ function App() {
                 </div>
 
                 {/* Profile Portrait */}
-                <div className="relative w-52 h-52 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-b from-amber-400 to-amber-600 shadow-[0_0_40px_rgba(245,158,11,0.3)] mb-6 mt-2">
+                <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-b from-amber-400 to-amber-600 shadow-[0_0_35px_rgba(245,158,11,0.35)] mb-5 mt-2">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#0c0d12] border-4 border-[#11131c]">
                     <img
-                      src="./assets/pradhap_avatar_square.jpg"
+                      src="./assets/pradhap_avatar.png"
                       alt="Pradhap M - Graphic Designer & Video Editor"
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
@@ -543,20 +543,20 @@ function App() {
 
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-14 items-center relative z-10">
           {/* Identity card */}
-          <div className="w-full lg:w-[380px] shrink-0">
-            <div data-aos="zoom-in" className="bg-[#12141f] rounded-3xl p-6 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative">
-              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-5 relative group">
-                <img
-                  src="./assets/pradhap_avatar_square.jpg"
-                  alt="Pradhap M"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                  <div className="text-left">
-                    <span className="text-[10px] uppercase font-mono font-bold text-luxury-gold">Active Creator</span>
-                    <h4 className="text-lg font-black text-white uppercase">PRADHAP M</h4>
-                  </div>
+          <div className="w-full max-w-[340px] sm:max-w-[360px] mx-auto lg:mx-0 lg:w-[360px] shrink-0">
+            <div data-aos="zoom-in" className="bg-[#12141f] rounded-3xl p-6 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative flex flex-col items-center">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-1.5 bg-gradient-to-tr from-amber-400 via-amber-500 to-amber-600 shadow-[0_0_35px_rgba(245,158,11,0.35)] mb-5">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#0c0d12] border-4 border-[#12141f]">
+                  <img
+                    src="./assets/pradhap_avatar.png"
+                    alt="Pradhap M"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
+              </div>
+              <div className="text-center mb-3">
+                <span className="text-[10px] uppercase font-mono font-bold text-luxury-gold tracking-widest">Active Creator</span>
+                <h4 className="text-xl font-black text-white uppercase tracking-tight">PRADHAP M</h4>
               </div>
 
               {/* Identity details list */}
