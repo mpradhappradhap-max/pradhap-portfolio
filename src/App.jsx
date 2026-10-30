@@ -168,8 +168,6 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showResumeModal, setShowResumeModal] = useState(false);
-  const videoRef = useRef(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const projectsRef = useRef(null);
   const { scrollYProgress: projectsScrollYProgress } = useScroll({
@@ -203,16 +201,6 @@ function App() {
     };
   }, []);
 
-  const toggleVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -392,10 +380,6 @@ function App() {
         <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-amber-600/15 blur-[140px] pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-amber-500/5 to-transparent blur-[160px] pointer-events-none"></div>
 
-        {/* Video loop overlay */}
-        <video loop playsInline ref={videoRef} className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0">
-          <source src="./assets/myselfvideo.mp4" type="video/mp4" />
-        </video>
 
         <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Hero text */}
@@ -522,19 +506,16 @@ function App() {
                   </div>
                 </div>
 
-                {/* Reel toggle */}
+                {/* View Resume Action */}
                 <button
-                  onClick={toggleVideo}
-                  className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-luxury-gold hover:text-black border border-white/10 transition-all duration-300 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-white"
+                  onClick={() => setShowResumeModal(true)}
+                  className="w-full py-2.5 px-4 rounded-xl bg-luxury-gold/15 hover:bg-luxury-gold hover:text-black text-luxury-gold border border-luxury-gold/30 transition-all duration-300 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider"
                 >
-                  <svg className="w-4 h-4 text-luxury-gold group-hover:text-black" fill="currentColor" viewBox="0 0 24 24">
-                    {isVideoPlaying ? (
-                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                    ) : (
-                      <path d="M8 5v14l11-7z" />
-                    )}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  {isVideoPlaying ? "Pause Video Reel" : "Play Ambient Reel"}
+                  Preview Full Resume
                 </button>
               </div>
             </div>
