@@ -442,25 +442,26 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative w-full h-screen overflow-hidden bg-luxury-bg">
-        {/* Hero Banner Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <section id="home" className="relative w-full min-h-screen md:h-screen overflow-hidden bg-luxury-bg flex items-center">
+        {/* Desktop Hero Banner (Anchored at right bottom with ample headroom, never cropped) */}
+        <div className="hidden md:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="./assets/hero_pradhap.jpg"
             alt="Pradhap M"
-            className="w-full h-full object-cover object-[78%_center] md:object-right opacity-90 md:opacity-100"
+            className="w-full h-full object-cover object-[right_bottom] opacity-95 filter brightness-105"
           />
-          {/* Gradients to seamlessly blend banner and protect text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-luxury-bg via-luxury-bg/85 md:via-luxury-bg/40 to-transparent z-10 w-full md:w-[65%]"></div>
+          {/* Subtle gradients protecting left text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-luxury-bg via-luxury-bg/80 to-transparent z-10 w-[55%]"></div>
           <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-luxury-bg to-transparent z-10"></div>
-          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-luxury-bg/80 to-transparent z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-luxury-bg/70 to-transparent z-10"></div>
         </div>
 
         {/* Ambient background glows */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-violet-600/20 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full filter blur-[160px] pointer-events-none z-0"></div>
 
-        <div className="absolute inset-0 z-20 pt-28 pb-10 px-6 md:pt-0 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-start md:items-end text-left w-full overflow-y-auto overflow-x-hidden">
+        {/* Responsive Content Container */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16 md:pt-32 md:pb-20 flex flex-col md:flex-row items-center md:items-end justify-between">
           <div className="flex flex-col items-start text-left max-w-2xl w-full">
             <h1 data-aos="fade-up" className="text-luxury-ivory text-3xl sm:text-4xl md:text-6xl font-black mb-2 tracking-tight">
               Hi, I’m <br /> <span className="text-luxury-ivory uppercase">PRADHAP M</span>
@@ -486,29 +487,23 @@ function App() {
               </a>
               <button
                 onClick={() => setShowResumeModal(true)}
-                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-black font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(191,133,253,0.4)] hover:shadow-[0_0_25px_rgba(191,133,253,0.6)]"
+                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(122,59,236,0.4)] hover:shadow-[0_0_25px_rgba(191,133,253,0.6)]"
               >
                 Preview Resume
               </button>
             </div>
-          </div>
 
-          {/* Interactive Visual Element */}
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="600"
-            onClick={() => setShowResumeModal(true)}
-            className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
-          >
-            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-luxury-bg/40 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(122,59,236,0.5)]">
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
+            {/* Mobile Hero Visual Card (Dedicated, centered, no text overlap!) */}
+            <div data-aos="zoom-in" data-aos-delay="500" className="md:hidden mt-8 w-full flex justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(122,59,236,0.4)] border border-luxury-gold/30 bg-[#12101E]">
+                <img
+                  src="./assets/hero_pradhap_portrait.jpg"
+                  alt="Pradhap M - Graphic Designer & Video Editor"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#0D0B18] to-transparent"></div>
+              </div>
             </div>
-            <span className="text-luxury-ivory text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-              View Resume
-            </span>
           </div>
         </div>
 
