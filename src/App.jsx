@@ -144,16 +144,46 @@ const ExperienceCard = ({ exp, pathLength, containerRef }) => {
 
 const portfolioLogos = [
   {
-    title: "Brand Identity Design",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/LOGO's/ML/ML-LOGO-V1-17.png"
+    id: 1,
+    title: "Sports & Action Poster Design",
+    category: "Key Art & Photo Manipulation",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/1.jpeg",
+    fallbackUrl: "./assets/projects/1.jpeg"
   },
   {
-    title: "Marketing Collateral & Presentation",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/LOGO's/SMART%20PURA/SP-PRESENTATION%201-18-15.jpg"
+    id: 2,
+    title: "Cinematic Film Key Art",
+    category: "Movie Poster & Visual Retouching",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/2.jpeg",
+    fallbackUrl: "./assets/projects/2.jpeg"
   },
   {
-    title: "Creative Branding & Logo",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/LOGO's/Buzz%20Creations/with%20text-01-01.png"
+    id: 3,
+    title: "Commercial Brand Campaign",
+    category: "Automotive & Social Media Creative",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/3.jpeg",
+    fallbackUrl: "./assets/projects/3.jpeg"
+  },
+  {
+    id: 4,
+    title: "Educational Marketing Creative",
+    category: "Digital Ad Campaign & Layout",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/4.jpeg",
+    fallbackUrl: "./assets/projects/4.jpeg"
+  },
+  {
+    id: 5,
+    title: "Brand Identity & Promotion",
+    category: "Professional Services Creative",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/5.jpeg",
+    fallbackUrl: "./assets/projects/5.jpeg"
+  },
+  {
+    id: 6,
+    title: "Corporate Marketing Collateral",
+    category: "Admissions & Brand Awareness",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/6.jpeg",
+    fallbackUrl: "./assets/projects/6.jpeg"
   }
 ];
 
@@ -794,20 +824,28 @@ function App() {
             <h3 data-aos="fade-up" className="text-2xl md:text-3xl font-black text-luxury-ivory">
               Logo &amp; Branding
             </h3>
+            <p data-aos="fade-up" data-aos-delay="100" className="text-luxury-taupe text-sm md:text-base mt-2">
+              Brand Identity, Social Media Creatives &amp; Commercial Posters
+            </p>
             <div className="w-16 h-1 bg-luxury-gold mx-auto mt-4 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioLogos.map((logo, idx) => (
               <div
                 key={idx}
                 onClick={() => setActiveImage(logo)}
                 data-aos="fade-up"
-                data-aos-delay={100 + idx * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[250px] md:min-h-[300px] flex flex-col justify-center items-center text-center p-8"
+                data-aos-delay={100 + (idx % 3) * 100}
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
               >
-                <img src={logo.url} alt={logo.title} className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-700 blur-[8px] group-hover:blur-[5px] scale-110 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-0"></div>
+                <img
+                  src={logo.url}
+                  alt={logo.title}
+                  onError={(e) => { if (logo.fallbackUrl) e.currentTarget.src = logo.fallbackUrl; }}
+                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-90 transition-all duration-700 blur-[2px] group-hover:blur-none scale-105 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
 
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -815,7 +853,7 @@ function App() {
                   </svg>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-black text-luxury-ivory group-hover:text-luxury-gold transition-colors duration-500 relative z-10 bg-black/50 group-hover:bg-black/70 px-6 py-2 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg">
+                <h3 className="text-base md:text-lg font-black text-luxury-ivory group-hover:text-luxury-gold transition-colors duration-500 relative z-10 bg-black/60 group-hover:bg-black/85 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg max-w-[95%]">
                   {logo.title}
                 </h3>
               </div>
@@ -998,8 +1036,21 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="w-full h-[80vh] flex items-center justify-center p-4">
-              <img src={activeImage.url} alt={activeImage.title} className="max-w-full max-h-full object-contain rounded" />
+            <div className="w-full max-h-[85vh] flex flex-col items-center justify-center p-4 md:p-6">
+              <img
+                src={activeImage.url}
+                alt={activeImage.title}
+                onError={(e) => { if (activeImage.fallbackUrl) e.currentTarget.src = activeImage.fallbackUrl; }}
+                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
+              />
+              <div className="mt-4 text-center">
+                <h4 className="text-luxury-ivory font-black text-xl md:text-2xl">{activeImage.title}</h4>
+                {activeImage.category && (
+                  <p className="text-luxury-gold text-xs md:text-sm font-semibold tracking-wider uppercase mt-1">
+                    {activeImage.category}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
