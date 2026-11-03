@@ -189,20 +189,40 @@ const portfolioLogos = [
 
 const portfolioVideos = [
   {
-    title: "Commercial Reel Edit",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/videos/19-06-2026%20part%202.mp4"
+    id: 1,
+    title: "The Atom - Brand Kinetic Motion",
+    category: "Motion Graphics & Social Media Reel",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/atom%20(1).mp4"
   },
   {
-    title: "Social Media Motion",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/videos/content%20dm.mp4"
+    id: 2,
+    title: "HPCL Power 100 Commercial",
+    category: "Supercar Automotive Commercial Edit",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/car.mp4"
   },
   {
-    title: "Promotional Webinar Cut",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/videos/NAVY%20WEBINAR.mp4"
+    id: 3,
+    title: "HP Pay - App Explainer Reel",
+    category: "Product Motion & UI Animation",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/hp%20(1).mp4"
   },
   {
-    title: "Short-Form Reel",
-    url: "https://ifwibdbxfsgzhcuctdjw.supabase.co/storage/v1/object/public/folder/ppn/videos/simp1.1.mp4"
+    id: 4,
+    title: "Corporate Cloud Motion Graphics",
+    category: "Digital Brand Motion & Visuals",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/WhatsApp%20Video%202026-10-30%20at%205.21.39%20PM.mp4"
+  },
+  {
+    id: 5,
+    title: "Kinetic Typography Explainer",
+    category: "Educational Reel & Motion Cut",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/WhatsApp%20Video%202026-11-03%20at%208.14.07%20PM%20(1).mp4"
+  },
+  {
+    id: 6,
+    title: "Lifestyle & Beauty Commercial Cut",
+    category: "Influencer & Social Video Edit",
+    url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/videos/WhatsApp%20Video%202026-11-03%20at%208.19.34%20PM.mp4"
   }
 ];
 
@@ -793,19 +813,19 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioVideos.map((video, idx) => (
               <div
                 key={idx}
                 onClick={() => setActiveVideo(video)}
                 data-aos="fade-up"
-                data-aos-delay={100 + idx * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[250px] md:min-h-[300px] flex flex-col justify-center items-center text-center p-8"
+                data-aos-delay={100 + (idx % 3) * 100}
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
               >
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-700 blur-[3px] group-hover:blur-sm scale-110 group-hover:scale-105">
+                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-85 transition-all duration-700 blur-[2px] group-hover:blur-none scale-105 group-hover:scale-110">
                   <source src={video.url} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-0"></div>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
 
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-black ml-1 md:ml-1.5 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
@@ -813,7 +833,11 @@ function App() {
                   </svg>
                 </div>
 
-                <span className="mt-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-luxury-ivory group-hover:text-black transition-colors duration-500 relative z-10 bg-black/60 group-hover:bg-luxury-gold px-6 py-2.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg">
+                <h3 className="text-base md:text-lg font-black text-luxury-ivory group-hover:text-luxury-gold transition-colors duration-500 relative z-10 bg-black/60 group-hover:bg-black/85 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg max-w-[95%] mb-3">
+                  {video.title}
+                </h3>
+
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-luxury-ivory/80 group-hover:text-black transition-colors duration-500 relative z-10 bg-black/40 group-hover:bg-luxury-gold px-5 py-1.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-md">
                   Watch Video
                 </span>
               </div>
@@ -1059,16 +1083,26 @@ function App() {
       {/* Video Modal */}
       {activeVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-12" onClick={() => setActiveVideo(null)}>
-          <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.2)] border border-luxury-gold/30" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full max-w-4xl max-h-[90vh] bg-luxury-card rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.2)] border border-luxury-gold/30 flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setActiveVideo(null)} className="absolute top-4 right-4 z-20 text-white bg-black/50 hover:bg-luxury-gold hover:text-black rounded-full p-2 transition-colors">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <video controls autoPlay className="w-full h-full object-contain">
-              <source src={activeVideo.url} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full flex items-center justify-center bg-black p-2 md:p-4">
+              <video key={activeVideo.url} controls autoPlay className="max-w-full max-h-[72vh] object-contain rounded">
+                <source src={activeVideo.url} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="py-3 px-6 text-center w-full bg-luxury-card border-t border-white/5">
+              <h4 className="text-luxury-ivory font-black text-lg md:text-xl">{activeVideo.title}</h4>
+              {activeVideo.category && (
+                <p className="text-luxury-gold text-xs md:text-sm font-semibold tracking-wider uppercase mt-0.5">
+                  {activeVideo.category}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       )}
