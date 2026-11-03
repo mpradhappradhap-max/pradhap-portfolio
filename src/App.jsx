@@ -525,10 +525,10 @@ function App() {
                 <div className="absolute -top-3 left-1/2 w-16 h-6 bg-[#080808] border-t border-l border-r border-luxury-gold/30 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
                   <div className="w-8 h-2 bg-luxury-bg/30 rounded-full shadow-inner"></div>
                 </div>
-                <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-luxury-card border border-gray-700 mb-3">
+                <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-luxury-card border border-luxury-gold/30 mb-3 group/photo">
                   <img
                     alt="Pradhap M"
-                    className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover rounded-lg transition-all duration-500 group-hover/photo:scale-105"
                     src="./assets/profile.jpg"
                   />
                 </div>
