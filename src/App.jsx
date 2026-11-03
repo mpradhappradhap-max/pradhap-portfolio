@@ -309,9 +309,9 @@ function App() {
             <motion.div
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative text-5xl md:text-7xl font-black tracking-tighter"
+              className="relative text-3xl sm:text-5xl md:text-7xl font-black tracking-tighter text-center"
             >
-              <div className="text-black/10">PRADHAP M</div>
+              <div className="text-black/10">PRADHAP PORTFOLIO</div>
               <motion.div
                 className="absolute top-0 left-0 text-luxury-bg overflow-hidden whitespace-nowrap"
                 initial={{ clipPath: "inset(100% 0 0 0)" }}
@@ -322,7 +322,7 @@ function App() {
                   delay: 0.2
                 }}
               >
-                PRADHAP M
+                PRADHAP PORTFOLIO
               </motion.div>
             </motion.div>
           </motion.div>
@@ -337,8 +337,8 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <a href="#" className="text-luxury-ivory text-2xl font-black tracking-tight whitespace-nowrap uppercase">
-              PRADHAP M
+            <a href="#" className="text-luxury-ivory text-xl sm:text-2xl font-black tracking-tight whitespace-nowrap uppercase">
+              PRADHAP <span className="text-luxury-gold">PORTFOLIO</span>
             </a>
           </div>
           <div className="hidden lg:flex space-x-8 flex-shrink-0">
@@ -1030,8 +1030,8 @@ function App() {
 
         {/* Large Signature Watermark */}
         <div className="w-full flex justify-center items-center py-20 md:py-24 overflow-hidden">
-          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter select-none text-white/5 w-full text-center uppercase">
-            PRADHAP M
+          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[14vw] md:text-[11vw] leading-none font-sans font-bold tracking-tighter select-none text-white/5 w-full text-center uppercase">
+            PRADHAP PORTFOLIO
           </h2>
         </div>
 
