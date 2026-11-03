@@ -443,6 +443,19 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative w-full h-screen overflow-hidden bg-luxury-bg">
+        {/* Hero Banner Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src="./assets/hero_pradhap.jpg"
+            alt="Pradhap M"
+            className="w-full h-full object-cover object-[78%_center] md:object-right opacity-90 md:opacity-100"
+          />
+          {/* Gradients to seamlessly blend banner and protect text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-luxury-bg via-luxury-bg/85 md:via-luxury-bg/40 to-transparent z-10 w-full md:w-[65%]"></div>
+          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-luxury-bg to-transparent z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-luxury-bg/80 to-transparent z-10"></div>
+        </div>
+
         {/* Ambient background glows */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-violet-600/20 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full filter blur-[160px] pointer-events-none z-0"></div>
