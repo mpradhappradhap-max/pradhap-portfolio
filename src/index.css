@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-bg: #0f172a;
-  --color-luxury-card: #1e293b;
-  --color-luxury-gold: #3b82f6;
-  --color-luxury-beige: #60a5fa;
-  --color-luxury-ivory: #f8fafc;
-  --color-luxury-taupe: #94a3b8;
+  --color-luxury-bg: #0D0B18;
+  --color-luxury-card: #181528;
+  --color-luxury-gold: #7A3BEC;
+  --color-luxury-beige: #BF85FD;
+  --color-luxury-ivory: #F6F4FF;
+  --color-luxury-taupe: #9D97B5;
 }
 
 /*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */

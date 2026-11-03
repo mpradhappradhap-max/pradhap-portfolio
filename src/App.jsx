@@ -96,11 +96,11 @@ const ExperienceCard = ({ exp, pathLength, containerRef }) => {
       data-aos-delay={exp.aosDelay}
       className={`w-80 sm:w-96 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${
         isActive
-          ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(245,158,11,0.35)]'
-          : 'bg-[#1a1a1a] border border-white/5 shadow-lg'
+          ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(122,59,236,0.35)]'
+          : 'bg-[#181528] border border-white/5 shadow-lg'
       }`}
     >
-      <div className="w-5 h-5 bg-gradient-to-br from-amber-200 to-amber-500 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-4 border border-amber-300 z-10 flex items-center justify-center">
+      <div className="w-5 h-5 bg-gradient-to-br from-violet-300 to-violet-600 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-4 border border-violet-400 z-10 flex items-center justify-center">
         <div className={`w-2 h-2 rounded-full ${isActive ? 'bg-luxury-gold' : 'bg-gray-600'}`}></div>
       </div>
       <div className={`w-full h-full rounded-[1.5rem] mt-8 p-6 flex flex-col min-h-[300px] transition-colors duration-700 ${isActive ? 'bg-white/5' : 'bg-black/20'}`}>
@@ -295,7 +295,7 @@ function App() {
   };
 
   return (
-    <div className="bg-[#050505] min-h-screen text-slate-100 selection:bg-amber-500 selection:text-black">
+    <div className="bg-[#0D0B18] min-h-screen text-slate-100 selection:bg-[#7A3BEC] selection:text-white">
       {/* Full-Screen Preloader */}
       <AnimatePresence>
         {loading && (
@@ -332,7 +332,7 @@ function App() {
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-[#050505]/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'
+          scrolled ? 'bg-[#0D0B18]/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
@@ -432,7 +432,7 @@ function App() {
               <a
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-block px-6 py-3 rounded-full bg-luxury-gold text-black font-black hover:bg-luxury-beige hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-colors w-full text-center shadow-lg"
+                className="inline-block px-6 py-3 rounded-full bg-luxury-gold text-white font-black hover:bg-luxury-beige hover:shadow-[0_0_15px_rgba(191,133,253,0.4)] transition-colors w-full text-center shadow-lg"
               >
                 Hire Me
               </a>
@@ -444,8 +444,8 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="relative w-full h-screen overflow-hidden bg-luxury-bg">
         {/* Ambient background glows */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-amber-600/10 rounded-full filter blur-[160px] pointer-events-none z-0"></div>
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-violet-600/20 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full filter blur-[160px] pointer-events-none z-0"></div>
 
         <div className="absolute inset-0 z-20 pt-28 pb-10 px-6 md:pt-0 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-start md:items-end text-left w-full overflow-y-auto overflow-x-hidden">
           <div className="flex flex-col items-start text-left max-w-2xl w-full">
@@ -473,7 +473,7 @@ function App() {
               </a>
               <button
                 onClick={() => setShowResumeModal(true)}
-                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-black font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)]"
+                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-black font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(191,133,253,0.4)] hover:shadow-[0_0_25px_rgba(191,133,253,0.6)]"
               >
                 Preview Resume
               </button>
@@ -487,8 +487,8 @@ function App() {
             onClick={() => setShowResumeModal(true)}
             className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
           >
-            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-luxury-bg/40 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(245,158,11,0.5)]">
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-luxury-ivory group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-luxury-bg/40 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(122,59,236,0.5)]">
+              <svg className="w-5 h-5 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
@@ -502,7 +502,7 @@ function App() {
         {/* Scroll down indicator */}
         <div data-aos="fade-up" data-aos-delay="800" className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none aos-init">
           <div className="animate-bounce">
-            <svg className="w-6 h-6 text-black drop-shadow-[0_1px_2px_rgba(255,255,255,0.6)]" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6 text-luxury-beige drop-shadow-[0_0_10px_rgba(122,59,236,0.8)]" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
           </div>
@@ -521,8 +521,8 @@ function App() {
             <div data-aos="drop-bounce" className="relative flex justify-center w-full aos-init">
               <div className="absolute -top-32 left-1/2 w-3 h-40 bg-luxury-bg transform -translate-x-1/2 shadow-inner z-0"></div>
               <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
-              <div className="bg-[#080808] w-full max-w-[280px] rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500 text-luxury-ivory font-mono text-[10px] tracking-wider border border-luxury-gold/30">
-                <div className="absolute -top-3 left-1/2 w-16 h-6 bg-[#080808] border-t border-l border-r border-luxury-gold/30 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
+              <div className="bg-[#12101E] w-full max-w-[280px] rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500 text-luxury-ivory font-mono text-[10px] tracking-wider border border-luxury-gold/30">
+                <div className="absolute -top-3 left-1/2 w-16 h-6 bg-[#12101E] border-t border-l border-r border-luxury-gold/30 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
                   <div className="w-8 h-2 bg-luxury-bg/30 rounded-full shadow-inner"></div>
                 </div>
                 <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-luxury-card border border-luxury-gold/30 mb-3 group/photo">
@@ -647,7 +647,7 @@ function App() {
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
           <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="100" className="bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
+            <div data-aos="fade-up" data-aos-delay="100" className="bg-[#12101E] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
                   <span>Graphic Design &amp; Principles</span>
@@ -678,7 +678,7 @@ function App() {
             </div>
           </div>
           <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="200" className="bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
+            <div data-aos="fade-up" data-aos-delay="200" className="bg-[#12101E] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
                   <span>Video, Motion &amp; AI Tools</span>
@@ -733,7 +733,7 @@ function App() {
             <mask id="path-mask">
               <motion.path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
             </mask>
-            <path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="#F59E0B" strokeWidth="3" strokeDasharray="8 10" mask="url(#path-mask)" className="drop-shadow-sm"></path>
+            <path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="#7A3BEC" strokeWidth="3" strokeDasharray="8 10" mask="url(#path-mask)" className="drop-shadow-sm"></path>
           </svg>
 
           <svg className="md:hidden absolute top-0 left-[50%] -translate-x-1/2 w-4 h-[100%] pointer-events-none z-0" viewBox="0 0 4 100" preserveAspectRatio="none">
@@ -741,7 +741,7 @@ function App() {
             <mask id="path-mask-mobile">
               <motion.path d="M 2,0 L 2,100" fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
             </mask>
-            <path d="M 2,0 L 2,100" fill="none" stroke="#F59E0B" strokeWidth="4" strokeDasharray="4 6" mask="url(#path-mask-mobile)" vectorEffect="non-scaling-stroke" className="drop-shadow-sm"></path>
+            <path d="M 2,0 L 2,100" fill="none" stroke="#7A3BEC" strokeWidth="4" strokeDasharray="4 6" mask="url(#path-mask-mobile)" vectorEffect="non-scaling-stroke" className="drop-shadow-sm"></path>
           </svg>
 
           {experiences.map((exp, idx) => (
@@ -751,7 +751,7 @@ function App() {
       </section>
 
       {/* Education & Certifications Section */}
-      <section id="education" className="bg-[#111] py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
+      <section id="education" className="bg-[#12101E] py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
           <div>
             <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">
@@ -820,7 +820,7 @@ function App() {
                 onClick={() => setActiveVideo(video)}
                 data-aos="fade-up"
                 data-aos-delay={100 + (idx % 3) * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(122,59,236,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
               >
                 <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-85 transition-all duration-700 blur-[2px] group-hover:blur-none scale-105 group-hover:scale-110">
                   <source src={video.url} type="video/mp4" />
@@ -828,7 +828,7 @@ function App() {
                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
 
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
-                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-black ml-1 md:ml-1.5 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white ml-1 md:ml-1.5 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
@@ -837,7 +837,7 @@ function App() {
                   {video.title}
                 </h3>
 
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-luxury-ivory/80 group-hover:text-black transition-colors duration-500 relative z-10 bg-black/40 group-hover:bg-luxury-gold px-5 py-1.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-md">
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-luxury-ivory/80 group-hover:text-white transition-colors duration-500 relative z-10 bg-black/40 group-hover:bg-luxury-gold px-5 py-1.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-md">
                   Watch Video
                 </span>
               </div>
@@ -861,7 +861,7 @@ function App() {
                 onClick={() => setActiveImage(logo)}
                 data-aos="fade-up"
                 data-aos-delay={100 + (idx % 3) * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(122,59,236,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
               >
                 <img
                   src={logo.url}
@@ -872,7 +872,7 @@ function App() {
                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
 
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
-                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                   </svg>
                 </div>
@@ -887,7 +887,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section ref={contactRef} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-luxury-card">
+      <section ref={contactRef} id="contact" className="bg-[#0D0B18] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-luxury-card">
         <motion.div
           className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
           style={{ y: contactY }}
@@ -899,7 +899,7 @@ function App() {
         <div className="relative z-10 w-full flex justify-end items-end">
           <div
             data-aos="fade-up"
-            className="bg-luxury-gold backdrop-blur-xl border border-black/10 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.3),0_25px_50px_-12px_rgba(0,0,0,0.5)] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-black flex flex-col justify-between min-h-[600px] transition-all duration-500"
+            className="bg-luxury-gold backdrop-blur-xl border border-white/20 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.3),0_25px_50px_-12px_rgba(122,59,236,0.5)] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between min-h-[600px] transition-all duration-500"
           >
             <div className="w-full flex flex-col justify-between h-full">
               <div>
@@ -914,7 +914,7 @@ function App() {
                         name="firstName"
                         required
                         placeholder="First Name *"
-                        className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none text-black"
+                        className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none text-white"
                         type="text"
                       />
                     </div>
@@ -923,7 +923,7 @@ function App() {
                         id="lastName"
                         name="lastName"
                         placeholder="Last Name"
-                        className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none text-black"
+                        className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none text-white"
                         type="text"
                       />
                     </div>
@@ -933,7 +933,7 @@ function App() {
                         name="email"
                         required
                         placeholder="Email *"
-                        className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none text-black"
+                        className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none text-white"
                         type="email"
                       />
                     </div>
@@ -951,22 +951,22 @@ function App() {
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 mt-4">
-                  <div className="flex-1 flex items-start gap-4 text-sm font-medium text-black/90">
+                  <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
                     <input
                       id="permission"
                       name="permission"
                       defaultChecked
-                      className="mt-1 w-4 h-4 rounded-sm border-black/40 bg-transparent text-black focus:ring-black focus:ring-offset-0 cursor-pointer"
+                      className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 cursor-pointer"
                       type="checkbox"
-                      style={{ accentColor: 'black' }}
+                      style={{ accentColor: '#BF85FD' }}
                     />
                     <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
                       I give permission to contact me at this email address.
                     </label>
                   </div>
-                  <div className="flex-1 flex flex-col gap-8 text-xs text-black/70 font-medium">
+                  <div className="flex-1 flex flex-col gap-8 text-xs text-white/80 font-medium">
                     <p className="leading-relaxed max-w-[400px]">
-                      Direct: <a href="mailto:mpradhappradhap@gmail.com" className="font-bold underline text-black">mpradhappradhap@gmail.com</a> | <a href="tel:+916369028601" className="font-bold underline text-black">+91 6369028601</a>
+                      Direct: <a href="mailto:mpradhappradhap@gmail.com" className="font-bold underline text-white hover:text-luxury-beige transition-colors">mpradhappradhap@gmail.com</a> | <a href="tel:+916369028601" className="font-bold underline text-white hover:text-luxury-beige transition-colors">+91 6369028601</a>
                     </p>
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
                       <p className="max-w-[250px] leading-relaxed">
@@ -975,7 +975,7 @@ function App() {
                       <button
                         type="submit"
                         disabled={formStatus === 'submitting'}
-                        className="px-8 py-3 rounded-full border border-black/40 text-black font-bold flex items-center justify-center gap-3 hover:bg-black hover:text-luxury-gold transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50"
+                        className="px-8 py-3 rounded-full border border-white/50 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#7A3BEC] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50"
                       >
                         {formStatus === 'submitting' ? 'Sending...' : formStatus === 'success' ? 'Sent!' : 'Send'}
                         <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -992,7 +992,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh] border-t border-luxury-card text-left">
+      <footer className="bg-[#0D0B18] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh] border-t border-luxury-card text-left">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
           <div className="flex flex-col gap-1">
             <p className="text-luxury-gold font-bold mb-1 uppercase tracking-widest">// SERVICES</p>
@@ -1017,7 +1017,7 @@ function App() {
 
         {/* Large Signature Watermark */}
         <div className="w-full flex justify-center items-center py-20 md:py-24 overflow-hidden">
-          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter select-none text-[#f4f4f4] w-full text-center uppercase">
+          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter select-none text-white/5 w-full text-center uppercase">
             PRADHAP M
           </h2>
         </div>
@@ -1054,7 +1054,7 @@ function App() {
       {/* Image Modal */}
       {activeImage && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-12" onClick={() => setActiveImage(null)}>
-          <div className="relative w-full max-w-5xl bg-luxury-card rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.2)] border border-luxury-gold/30" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full max-w-5xl bg-luxury-card rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(122,59,236,0.2)] border border-luxury-gold/30" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setActiveImage(null)} className="absolute top-4 right-4 z-20 text-white bg-black/50 hover:bg-luxury-gold hover:text-black rounded-full p-2 transition-colors">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1083,7 +1083,7 @@ function App() {
       {/* Video Modal */}
       {activeVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-12" onClick={() => setActiveVideo(null)}>
-          <div className="relative w-full max-w-4xl max-h-[90vh] bg-luxury-card rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.2)] border border-luxury-gold/30 flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full max-w-4xl max-h-[90vh] bg-luxury-card rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(122,59,236,0.2)] border border-luxury-gold/30 flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setActiveVideo(null)} className="absolute top-4 right-4 z-20 text-white bg-black/50 hover:bg-luxury-gold hover:text-black rounded-full p-2 transition-colors">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1122,7 +1122,7 @@ function App() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative bg-[#11131e] border-2 border-luxury-gold/50 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
+              className="relative bg-[#151226] border-2 border-luxury-gold/50 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -1140,7 +1140,7 @@ function App() {
                   <a
                     href="./assets/Pradhap_M_Resume.pdf"
                     download="Pradhap_M_Resume.pdf"
-                    className="px-3 py-1.5 rounded-lg bg-luxury-gold text-black text-xs font-bold uppercase tracking-wider hover:bg-amber-400 transition-colors flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-lg bg-luxury-gold text-white text-xs font-bold uppercase tracking-wider hover:bg-luxury-beige transition-colors flex items-center gap-1.5"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
