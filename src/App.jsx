@@ -852,7 +852,7 @@ Email: ${senderEmail}`
 
           <div className="mt-20 mb-8 text-center">
             <h3 data-aos="fade-up" className="text-2xl md:text-3xl font-black text-luxury-ivory">
-              Logo &amp; Branding
+              Creative Designs
             </h3>
             <p data-aos="fade-up" data-aos-delay="100" className="text-luxury-taupe text-sm md:text-base mt-2">
               Brand Identity, Social Media Creatives &amp; Commercial Posters
