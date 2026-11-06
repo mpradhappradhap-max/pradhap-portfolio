@@ -828,26 +828,24 @@ Email: ${senderEmail}`
                 onClick={() => setActiveVideo(video)}
                 data-aos="fade-up"
                 data-aos-delay={100 + (idx % 3) * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(122,59,236,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/10 shadow-2xl hover:border-luxury-gold/50 hover:shadow-[0_0_30px_rgba(122,59,236,0.3)] transition-all duration-500 aspect-video md:aspect-[16/10] flex items-center justify-center"
               >
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-85 transition-all duration-700 blur-[2px] group-hover:blur-none scale-105 group-hover:scale-110">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-105"
+                >
                   <source src={video.url} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
+                <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors duration-300"></div>
 
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
-                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white ml-1 md:ml-1.5 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/30 bg-black/60 backdrop-blur-md flex items-center justify-center group-hover:bg-luxury-gold group-hover:border-luxury-gold group-hover:scale-110 transition-all duration-300 shadow-2xl relative z-10">
+                  <svg className="w-6 h-6 md:w-7 md:h-7 text-white ml-1 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-
-                <h3 className="text-base md:text-lg font-black text-luxury-ivory group-hover:text-luxury-gold transition-colors duration-500 relative z-10 bg-black/60 group-hover:bg-black/85 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg max-w-[95%] mb-3">
-                  {video.title}
-                </h3>
-
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-luxury-ivory/80 group-hover:text-white transition-colors duration-500 relative z-10 bg-black/40 group-hover:bg-luxury-gold px-5 py-1.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-md">
-                  Watch Video
-                </span>
               </div>
             ))}
           </div>
@@ -869,25 +867,21 @@ Email: ${senderEmail}`
                 onClick={() => setActiveImage(logo)}
                 data-aos="fade-up"
                 data-aos-delay={100 + (idx % 3) * 100}
-                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/5 shadow-2xl hover:border-luxury-gold/40 hover:shadow-[0_0_30px_rgba(122,59,236,0.2)] transition-all duration-500 min-h-[280px] md:min-h-[320px] flex flex-col justify-center items-center text-center p-6"
+                className="group cursor-pointer relative rounded-2xl overflow-hidden bg-luxury-card border border-white/10 shadow-2xl hover:border-luxury-gold/50 hover:shadow-[0_0_30px_rgba(122,59,236,0.3)] transition-all duration-500 aspect-[4/5] sm:aspect-square md:aspect-[4/5] flex items-center justify-center"
               >
                 <img
                   src={logo.url}
-                  alt={logo.title}
+                  alt="Portfolio Work"
                   onError={(e) => { if (logo.fallbackUrl) e.currentTarget.src = logo.fallbackUrl; }}
-                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-90 transition-all duration-700 blur-[2px] group-hover:blur-none scale-105 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/35 transition-colors duration-500 z-0"></div>
-
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black/60 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-luxury-gold group-hover:border-luxury-gold transition-all duration-500 group-hover:scale-110 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative z-10">
-                  <svg className="w-6 h-6 md:w-8 md:h-8 text-luxury-ivory group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-black/60 border border-luxury-gold/50 backdrop-blur-md flex items-center justify-center text-luxury-gold transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                    </svg>
+                  </div>
                 </div>
-
-                <h3 className="text-base md:text-lg font-black text-luxury-ivory group-hover:text-luxury-gold transition-colors duration-500 relative z-10 bg-black/60 group-hover:bg-black/85 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/10 group-hover:border-luxury-gold shadow-lg max-w-[95%]">
-                  {logo.title}
-                </h3>
               </div>
             ))}
           </div>
@@ -1068,21 +1062,13 @@ Email: ${senderEmail}`
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="w-full max-h-[85vh] flex flex-col items-center justify-center p-4 md:p-6">
+            <div className="w-full max-h-[85vh] flex items-center justify-center p-4 md:p-6">
               <img
                 src={activeImage.url}
-                alt={activeImage.title}
+                alt="Portfolio Display"
                 onError={(e) => { if (activeImage.fallbackUrl) e.currentTarget.src = activeImage.fallbackUrl; }}
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
+                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
               />
-              <div className="mt-4 text-center">
-                <h4 className="text-luxury-ivory font-black text-xl md:text-2xl">{activeImage.title}</h4>
-                {activeImage.category && (
-                  <p className="text-luxury-gold text-xs md:text-sm font-semibold tracking-wider uppercase mt-1">
-                    {activeImage.category}
-                  </p>
-                )}
-              </div>
             </div>
           </div>
         </div>
@@ -1098,18 +1084,10 @@ Email: ${senderEmail}`
               </svg>
             </button>
             <div className="w-full flex items-center justify-center bg-black p-2 md:p-4">
-              <video key={activeVideo.url} controls autoPlay className="max-w-full max-h-[72vh] object-contain rounded">
+              <video key={activeVideo.url} controls autoPlay className="max-w-full max-h-[80vh] object-contain rounded">
                 <source src={activeVideo.url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-            </div>
-            <div className="py-3 px-6 text-center w-full bg-luxury-card border-t border-white/5">
-              <h4 className="text-luxury-ivory font-black text-lg md:text-xl">{activeVideo.title}</h4>
-              {activeVideo.category && (
-                <p className="text-luxury-gold text-xs md:text-sm font-semibold tracking-wider uppercase mt-0.5">
-                  {activeVideo.category}
-                </p>
-              )}
             </div>
           </div>
         </div>
