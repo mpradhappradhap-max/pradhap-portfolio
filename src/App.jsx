@@ -184,6 +184,27 @@ const portfolioLogos = [
     category: "Admissions & Brand Awareness",
     url: "https://cexjecvsdsycxezxwyyj.supabase.co/storage/v1/object/public/pictures/6.jpeg",
     fallbackUrl: "./assets/projects/6.jpeg"
+  },
+  {
+    id: 7,
+    title: "Digital Growth Campaign Creative",
+    category: "Strategic Digital Marketing & Ad Creative",
+    url: "./assets/projects/7.jpeg",
+    fallbackUrl: "./assets/projects/7.jpeg"
+  },
+  {
+    id: 8,
+    title: "IOCL Box Packaging Dieline",
+    category: "Brand Packaging & Merchandise Design",
+    url: "./assets/projects/8.jpeg",
+    fallbackUrl: "./assets/projects/8.jpeg"
+  },
+  {
+    id: 9,
+    title: "Coconut Charcoal Soap Packaging",
+    category: "Product Box & Dieline Design",
+    url: "./assets/projects/9.jpeg",
+    fallbackUrl: "./assets/projects/9.jpeg"
   }
 ];
 
