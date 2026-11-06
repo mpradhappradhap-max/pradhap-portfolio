@@ -267,31 +267,31 @@ function App() {
   }, []);
 
   const [formStatus, setFormStatus] = useState('idle');
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormStatus('submitting');
     const formData = new FormData(e.target);
-    formData.append("access_key", "54bea58c-6255-4d4e-adfb-f30a421d2dc8");
-    formData.append("subject", "New Client Inquiry for Pradhap M");
+    const firstName = formData.get('firstName') || '';
+    const lastName = formData.get('lastName') || '';
+    const senderEmail = formData.get('email') || '';
+    const message = formData.get('message') || '';
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-      const data = await response.json();
-      if (data.success) {
-        setFormStatus('success');
-        e.target.reset();
-        setTimeout(() => setFormStatus('idle'), 5000);
-      } else {
-        setFormStatus('error');
-        setTimeout(() => setFormStatus('idle'), 5000);
-      }
-    } catch {
-      setFormStatus('error');
-      setTimeout(() => setFormStatus('idle'), 5000);
-    }
+    const fullName = `${firstName} ${lastName}`.trim();
+    const mailSubject = encodeURIComponent(`Portfolio Inquiry from ${fullName || 'Client'}`);
+    const mailBody = encodeURIComponent(
+      `Hi Pradhap,
+
+${message}
+
+---
+From: ${fullName}
+Email: ${senderEmail}`
+    );
+
+    window.location.href = `mailto:mpradhappradhap@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+    setFormStatus('success');
+    e.target.reset();
+    setTimeout(() => setFormStatus('idle'), 5000);
   };
 
   return (
@@ -985,7 +985,7 @@ function App() {
                         disabled={formStatus === 'submitting'}
                         className="px-8 py-3 rounded-full border border-white/50 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#7A3BEC] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50"
                       >
-                        {formStatus === 'submitting' ? 'Sending...' : formStatus === 'success' ? 'Sent!' : 'Send'}
+                        {formStatus === 'submitting' ? 'Opening Mail...' : formStatus === 'success' ? 'Opening Mail...' : 'Send Message'}
                         <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
