@@ -15,7 +15,7 @@ const experiences = [
       "Collaborated effectively across project teams ensuring seamless creative alignment, rapid revisions, and punctual deliverables."
     ],
     tags: ["Graphic Design", "Video Editing", "Motion Graphics", "Social Media"],
-    className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] rotate-1 md:rotate-2",
+    className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] rotate-0 md:rotate-2",
     aosType: "fade-left",
     aosDelay: "100",
     theme: "light"
@@ -31,7 +31,7 @@ const experiences = [
       "Applied professional color correction and LUT grading to establish visually cinematic, brand-consistent video tones."
     ],
     tags: ["Premiere Pro", "Video Editing", "Color Grading", "Audio Sync"],
-    className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] -rotate-1 md:-rotate-2",
+    className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] rotate-0 md:-rotate-2",
     aosType: "fade-right",
     aosDelay: "200",
     theme: "dark"
@@ -47,7 +47,7 @@ const experiences = [
       "Constructed reusable motion templates (MOGRTs) for streamlined video editing workflows."
     ],
     tags: ["After Effects", "Motion Graphics", "Kinetic Typography", "Logo Reveals"],
-    className: "md:absolute md:top-[900px] md:right-[2%] lg:right-[8%] rotate-1 md:rotate-3",
+    className: "md:absolute md:top-[900px] md:right-[2%] lg:right-[8%] rotate-0 md:rotate-3",
     aosType: "fade-left",
     aosDelay: "300",
     theme: "light"
@@ -63,7 +63,7 @@ const experiences = [
       "Designed print-ready marketing collaterals including multi-page brochures, event posters, and flyers with strict prepress standards."
     ],
     tags: ["AI Graphic Design", "Midjourney", "InDesign", "Print Layouts"],
-    className: "md:absolute md:top-[1350px] md:left-[2%] lg:left-[5%] -rotate-1 md:-rotate-2",
+    className: "md:absolute md:top-[1350px] md:left-[2%] lg:left-[5%] rotate-0 md:-rotate-2",
     aosType: "fade-right",
     aosDelay: "400",
     theme: "dark"
@@ -94,7 +94,7 @@ const ExperienceCard = ({ exp, pathLength, containerRef }) => {
       ref={cardRef}
       data-aos={exp.aosType}
       data-aos-delay={exp.aosDelay}
-      className={`w-80 sm:w-96 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${
+      className={`w-full max-w-[340px] sm:max-w-sm sm:w-96 mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${
         isActive
           ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(122,59,236,0.35)]'
           : 'bg-[#181528] border border-white/5 shadow-lg'
@@ -270,7 +270,7 @@ function App() {
   const contactY = useTransform(contactScrollYProgress, [0, 1], ["-20%", "30%"]);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false });
+    AOS.init({ duration: 800, once: true, offset: 40 });
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -316,7 +316,7 @@ Email: ${senderEmail}`
   };
 
   return (
-    <div className="bg-[#0D0B18] min-h-screen text-slate-100 selection:bg-[#7A3BEC] selection:text-white">
+    <div className="bg-[#0D0B18] min-h-screen text-slate-100 selection:bg-[#7A3BEC] selection:text-white overflow-x-hidden w-full relative">
       {/* Full-Screen Preloader */}
       <AnimatePresence>
         {loading && (
@@ -418,7 +418,7 @@ Email: ${senderEmail}`
         {/* Mobile menu dropdown */}
         <div
           className={`lg:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden ${
-            isMenuOpen ? "max-h-[500px] opacity-100 bg-luxury-bg/95 backdrop-blur-md pb-6 pt-2 border-b border-white/10" : "max-h-0 opacity-0"
+            isMenuOpen ? "max-h-[85vh] opacity-100 bg-[#0D0B18]/98 backdrop-blur-xl pb-8 pt-4 border-b border-luxury-gold/20 shadow-2xl overflow-y-auto" : "max-h-0 opacity-0 pointer-events-none"
           }`}
         >
           <div className="flex flex-col px-6 space-y-4">
@@ -482,7 +482,7 @@ Email: ${senderEmail}`
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full filter blur-[160px] pointer-events-none z-0"></div>
 
         {/* Responsive Content Container */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16 md:pt-32 md:pb-20 flex flex-col md:flex-row items-center md:items-end justify-between">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 flex flex-col md:flex-row items-center md:items-end justify-between">
           <div className="flex flex-col items-start text-left max-w-2xl w-full">
             <h1 data-aos="fade-up" className="text-luxury-ivory text-3xl sm:text-4xl md:text-6xl font-black mb-2 tracking-tight">
               Hi, I’m <br /> <span className="text-luxury-ivory uppercase">PRADHAP M</span>
@@ -493,22 +493,22 @@ Email: ${senderEmail}`
             <p data-aos="fade-up" data-aos-delay="200" className="text-luxury-ivory/80 text-xs sm:text-sm md:text-lg font-semibold mb-6 max-w-lg drop-shadow-md leading-relaxed">
               Creative Graphic Designer, Video Editor, and Motion Graphics Artist skilled in Adobe Creative Suite, seeking to contribute innovative designs and dynamic content in a collaborative environment.
             </p>
-            <div data-aos="fade-up" data-aos-delay="400" className="flex flex-row flex-wrap items-center gap-2 md:gap-3 w-full">
+            <div data-aos="fade-up" data-aos-delay="400" className="flex flex-row flex-wrap items-center gap-2.5 sm:gap-3 w-full">
               <a
                 href="#experience"
-                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md"
+                className="flex-1 sm:flex-none text-center px-5 py-3 text-xs sm:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 active:scale-95 shadow-md"
               >
                 View Experience
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-bg/40 border border-white text-luxury-ivory font-bold hover:bg-luxury-bg/60 transition-all duration-300 backdrop-blur-md"
+                className="flex-1 sm:flex-none text-center px-5 py-3 text-xs sm:text-sm rounded-full bg-luxury-bg/40 border border-white text-luxury-ivory font-bold hover:bg-luxury-bg/60 transition-all duration-300 backdrop-blur-md active:scale-95"
               >
                 Contact Me
               </a>
               <button
                 onClick={() => setShowResumeModal(true)}
-                className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(122,59,236,0.4)] hover:shadow-[0_0_25px_rgba(191,133,253,0.6)]"
+                className="w-full sm:w-auto text-center px-5 py-3 text-xs sm:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(122,59,236,0.4)] active:scale-95"
               >
                 Preview Resume
               </button>
@@ -539,7 +539,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-luxury-card pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans border-b border-luxury-gold/10">
+      <section id="about" className="bg-luxury-card pt-16 pb-24 md:pt-20 md:pb-40 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans border-b border-luxury-gold/10">
         <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 pointer-events-none z-10"></div>
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/5 rounded-full filter blur-[120px] pointer-events-none z-0"></div>
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-luxury-gold/10 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
@@ -550,7 +550,7 @@ Email: ${senderEmail}`
             <div data-aos="drop-bounce" className="relative flex justify-center w-full aos-init">
               <div className="absolute -top-32 left-1/2 w-3 h-40 bg-luxury-bg transform -translate-x-1/2 shadow-inner z-0"></div>
               <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
-              <div className="bg-[#12101E] w-full max-w-[280px] rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500 text-luxury-ivory font-mono text-[10px] tracking-wider border border-luxury-gold/30">
+              <div className="bg-[#12101E] w-full max-w-[280px] rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative z-20 transform rotate-0 sm:-rotate-3 hover:rotate-0 transition-transform duration-500 text-luxury-ivory font-mono text-[10px] tracking-wider border border-luxury-gold/30">
                 <div className="absolute -top-3 left-1/2 w-16 h-6 bg-[#12101E] border-t border-l border-r border-luxury-gold/30 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
                   <div className="w-8 h-2 bg-luxury-bg/30 rounded-full shadow-inner"></div>
                 </div>
@@ -605,7 +605,7 @@ Email: ${senderEmail}`
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-12 max-w-3xl text-luxury-taupe">
               My focus is delivering innovative design solutions, polished video post-production, and dynamic marketing assets in collaborative creative environments.
             </p>
-            <div className="flex items-center gap-5 md:gap-7 mt-8 flex-wrap">
+            <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-7 mt-8 flex-wrap">
               <img
                 alt="Photoshop"
                 className="w-14 h-14 md:w-16 md:h-16 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-luxury-bg/10 rounded-xl p-1"
@@ -664,7 +664,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="bg-luxury-bg py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
+      <section id="skills" className="bg-luxury-bg py-16 md:py-28 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
         <div className="max-w-6xl mx-auto mb-16 md:mb-20 text-center md:text-left">
           <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">
             Core Competencies
@@ -676,7 +676,7 @@ Email: ${senderEmail}`
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
           <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="100" className="bg-[#12101E] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
+            <div data-aos="fade-up" data-aos-delay="100" className="bg-[#12101E] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
                   <span>Graphic Design &amp; Principles</span>
@@ -707,7 +707,7 @@ Email: ${senderEmail}`
             </div>
           </div>
           <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="200" className="bg-[#12101E] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
+            <div data-aos="fade-up" data-aos-delay="200" className="bg-[#12101E] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(122,59,236,0.15)] transition-all duration-500 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
                   <span>Video, Motion &amp; AI Tools</span>
@@ -743,7 +743,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Experience Section with Curved Path Timeline */}
-      <section id="experience" ref={experienceRef} className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]">
+      <section id="experience" ref={experienceRef} className="bg-white pt-16 pb-20 md:pt-24 md:pb-32 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]">
         <div className="max-w-6xl mx-auto relative md:h-[1900px]">
           <div data-aos="fade-up" className="md:absolute top-10 left-0 md:w-[450px] z-20 mb-16 md:mb-0">
             <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-xs text-gray-500 font-bold mb-6 shadow-sm bg-white uppercase tracking-widest">
@@ -780,7 +780,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Education & Certifications Section */}
-      <section id="education" className="bg-[#12101E] py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
+      <section id="education" className="bg-[#12101E] py-16 md:py-28 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
           <div>
             <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">
@@ -828,7 +828,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="bg-luxury-bg py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card min-h-[50vh]">
+      <section id="projects" className="bg-luxury-bg py-16 md:py-28 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card min-h-[50vh]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div data-aos="fade-up" className="inline-block border border-luxury-gold/30 rounded-full px-5 py-1.5 text-xs text-luxury-gold font-bold uppercase tracking-widest mb-6 bg-luxury-card shadow-sm">
@@ -842,7 +842,7 @@ Email: ${senderEmail}`
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
             {portfolioVideos.map((video, idx) => (
               <div
                 key={idx}
@@ -881,7 +881,7 @@ Email: ${senderEmail}`
             <div className="w-16 h-1 bg-luxury-gold mx-auto mt-4 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
             {portfolioLogos.map((logo, idx) => (
               <div
                 key={idx}
@@ -910,7 +910,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Contact Section */}
-      <section ref={contactRef} id="contact" className="bg-[#0D0B18] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-luxury-card">
+      <section ref={contactRef} id="contact" className="bg-[#0D0B18] w-full min-h-screen relative overflow-hidden flex items-end pt-20 md:pt-32 pb-0 md:pb-0 border-t border-luxury-card">
         <motion.div
           className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
           style={{ y: contactY }}
@@ -922,7 +922,7 @@ Email: ${senderEmail}`
         <div className="relative z-10 w-full flex justify-end items-end">
           <div
             data-aos="fade-up"
-            className="bg-luxury-gold backdrop-blur-xl border border-white/20 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.3),0_25px_50px_-12px_rgba(122,59,236,0.5)] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between min-h-[600px] transition-all duration-500"
+            className="bg-luxury-gold backdrop-blur-xl border border-white/20 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.3),0_25px_50px_-12px_rgba(122,59,236,0.5)] w-full md:w-[85%] lg:w-[75%] p-6 sm:p-8 md:p-16 text-white flex flex-col justify-between min-h-0 md:min-h-[600px] transition-all duration-500 rounded-2xl sm:rounded-3xl"
           >
             <div className="w-full flex flex-col justify-between h-full">
               <div>
@@ -968,7 +968,7 @@ Email: ${senderEmail}`
                         name="message"
                         required
                         placeholder="Type your message here *"
-                        className="w-full h-full min-h-[120px] bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium resize-none rounded-none text-black"
+                        className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium resize-none rounded-none text-white"
                       ></textarea>
                     </div>
                   </div>
@@ -998,7 +998,7 @@ Email: ${senderEmail}`
                       <button
                         type="submit"
                         disabled={formStatus === 'submitting'}
-                        className="px-8 py-3 rounded-full border border-white/50 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#7A3BEC] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50"
+                        className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/50 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#7A3BEC] active:scale-95 transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50"
                       >
                         {formStatus === 'submitting' ? 'Opening Mail...' : formStatus === 'success' ? 'Opening Mail...' : 'Send Message'}
                         <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1015,7 +1015,7 @@ Email: ${senderEmail}`
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0D0B18] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh] border-t border-luxury-card text-left">
+      <footer className="bg-[#0D0B18] text-[#d4d4d4] py-12 md:py-16 px-4 sm:px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-0 md:min-h-[50vh] border-t border-luxury-card text-left">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
           <div className="flex flex-col gap-1">
             <p className="text-luxury-gold font-bold mb-1 uppercase tracking-widest">// SERVICES</p>
@@ -1040,7 +1040,7 @@ Email: ${senderEmail}`
 
         {/* Large Signature Watermark */}
         <div className="w-full flex justify-center items-center py-20 md:py-24 overflow-hidden">
-          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[14vw] md:text-[11vw] leading-none font-sans font-bold tracking-tighter select-none text-white/5 w-full text-center uppercase">
+          <h2 data-aos="fade-up" data-aos-delay="100" className="text-[11vw] sm:text-[10vw] md:text-[11vw] leading-none font-sans font-bold tracking-tighter select-none text-white/5 w-full text-center uppercase whitespace-nowrap overflow-hidden">
             PRADHAP PORTFOLIO
           </h2>
         </div>
@@ -1133,17 +1133,17 @@ Email: ${senderEmail}`
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-black/40">
+              <div className="p-3.5 sm:p-5 border-b border-white/10 flex flex-col sm:flex-row gap-3 sm:gap-2 items-start sm:items-center justify-between bg-black/40">
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-luxury-gold/20 flex items-center justify-center text-luxury-gold font-bold text-sm">
+                  <span className="w-8 h-8 rounded-full bg-luxury-gold/20 flex items-center justify-center text-luxury-gold font-bold text-sm flex-shrink-0">
                     CV
                   </span>
                   <div>
-                    <h3 className="text-base sm:text-lg font-black text-white uppercase">PRADHAP M — Official Resume</h3>
-                    <p className="text-xs text-luxury-gold font-semibold">Graphic Designer &amp; Video Editor</p>
+                    <h3 className="text-sm sm:text-lg font-black text-white uppercase leading-snug">PRADHAP M — Official Resume</h3>
+                    <p className="text-[11px] sm:text-xs text-luxury-gold font-semibold">Graphic Designer &amp; Video Editor</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                   <a
                     href="./assets/Pradhap_M_Resume.pdf"
                     download="Pradhap_M_Resume.pdf"
